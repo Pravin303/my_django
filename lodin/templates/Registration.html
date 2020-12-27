@@ -1,0 +1,59 @@
+
+
+<h1>New user rgistration form</h1>
+</hr>
+<form method="POST">
+{% csrf_token %}
+<table border="1">
+	<tr>
+		<td>Username</td>
+		<td><input type="text" placeholder="Enter Username" name="username" required ></td>
+	</tr>
+
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" placeholder="Enter Email" name="email" required></td>
+	</tr>
+
+	<tr>
+		<td>Password</td>
+		<td><input type="Password" placeholder="Enter Password" name="password" required></td>
+	</tr>
+
+	<tr>
+		<td>Age</td>
+		<td><input type="text" placeholder="Enter age" name ="age" required></td>
+	</tr>
+
+	<tr>
+		<td>Gender</td>
+		<td><input type="radio" value="M" name="gender">Male |
+		   <input type="radio" value="F" name="gender">Female </td>
+	</tr>
+
+	<tr>
+		<td>Marital Status</td>
+		<td> <select name="martialStatus">
+		<option value="Married">Married</options>
+		<option value="Unmarried">Unmarried</options>
+		<option value="Devorced">Devorced</options>
+		</select></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td><button type"submit"> Registration </button></td>
+	</tr>
+
+	
+
+	
+</table>
+{% if messages %}
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+{% endif %}
+<hr/>
+<em>If you already a Member <a href="{% url 'Login' %}">Signin</a></em>
+</form>

@@ -1,0 +1,11 @@
+<b><h1>Welcome</h1></b>
+</hr>
+{% if request.session.Email%}
+{{request.session.Email}} &nbsp;&nbsp;<a href="{% url 'Logout' %}">Logout</a>
+{% else %}
+<b>
+<a href="{% url 'Reg' %}">Registraion</a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'Login' %}">Login</a>
+</b>
+{% endif %}
+
